@@ -1,24 +1,21 @@
-#ifndef _HOLBERTON_H_
-#define _HOLBERTON_H_
-
+#ifndef HOLBERTON_H
+#define HOLBERTON_H
 #include <stdarg.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 
-/**
-* struct print - struct for printer functions
-* @type_arg: identifier
-* @f: pointer to a printer functions
-*
-* Description: struct that stores pointers to a
-* printer functions.
-*/
-typedef struct print
+typedef struct op
 {
-char *type_arg;
-int (*f)(va_list, char *, unsigned int);
-} print_t;
+char op;
+void (*f)();
+} op_t;
 
 int _printf(const char *format, ...);
-
+void print_char(va_list ap);
+void print_string(va_list ap);
+int _putchar(char c);
+int _strlen(char *s);
+void print_int(int n);
+void print_mod(char c);
 #endif
