@@ -1,47 +1,47 @@
 #include "holberton.h"
-#include <stddef.h>
+#include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
+#include <stdarg.h>
 /**
-* _printf - Build out the printf function
-* @format: string passed with possible format specifiers
-* Return: number of characters printed
+* _printf - custom printf
+* @format: input format
+* Return: total length of string printed
 */
 int _printf(const char *format, ...)
 {
-int i, aladin, hlen;
-double totalBuffer;
-double *total;
-va_list argp;
-char buffer[BUFSIZE], *holder;
-char *(*pointer_get_valid)(va_list);
-for (i = 0; i < BUFSIZE; i++)
+int cnt = 0, total = 0, spaces = 0, total1 = 0;
+char z;
+va_list list;
+if (format == NULL)
 {
-buffer[i] = 0;
+return (-1);
 }
-totalBuffer = 0;
-pointer_get_valid = NULL;
-total = &totalBuffer;
-va_start(argp, format);
-for (i = aladin = hlen = 0; format && format[i]; i++)
+va_start(list, format);
+while (format[cnt] != '\0')
 {
-if (format[i] == '%')
+if (format[cnt] == '%' && format[cnt + 1] == '\0')
+return (-1);
+else if (format[cnt] == '%' && format[cnt + 1] == '%')
 {
-pointer_get_valid = get_valid_type(format[i + 1]);
-holder = (pointer_get_valid == NULL) ?
-found_nothing(format[i + 1]) :
-pointer_get_valid(argp);
-hlen = _strlen(holder);
-aladin = alloc_buffer(holder, hlen, buffer, aladin, total);
-i++;
+_putchar(format[cnt + 1]);
+total += 1;
+cnt += 2;
+}
+else if (format[cnt] == '%')
+{
+z = spec_get(format, cnt);
+total1 = prog_get(z, list, format, cnt);
+total = total1 + total;
+spaces = count_spaces(format, cnt);
+cnt += (spaces + 2);
 }
 else
 {
-holder = ctos(format[i]);
-aladin = alloc_buffer(holder, 1, buffer, aladin, total);
+_putchar(format[cnt]);
+cnt++;
+total++;
 }
 }
-va_end(argp);
-_puts(buffer, aladin);
-return (totalBuffer + aladin);
+va_end(list);
+return (total);
 }
