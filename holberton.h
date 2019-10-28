@@ -19,7 +19,7 @@ int print_c(va_list c);
 int print_s(va_list s);
 int(*getspecifier(char))(va_list);
 int _print_i(va_list vi);
-
+int print_bin(va_list bin);
 int print_rs(va_list rs);
 
 
