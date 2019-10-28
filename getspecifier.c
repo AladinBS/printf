@@ -1,4 +1,3 @@
-
 #include "holberton.h"
 #include <stdio.h>
 #include <stdarg.h>
@@ -7,6 +6,7 @@
 * getspecifier - finds the function for the specifier
 * @x: the specifier in the string
 * Return: pointer to function
+* Aladin Bensassi / Yassin Bahri
 */
 int(*getspecifier(char x))(va_list)
 {
@@ -18,11 +18,11 @@ mystr p[] = {
 {'d', _print_i},
 {'\0', '\0'}
 };
-for (i = 0; p[i].letter; i++)
+for (a = 0; p[a].letter; a++)
 {
-if (p[i].letter == x)
+if (p[a].letter == x)
 {
-return (p[i].func);
+return (p[a].func);
 }
 }
 return (0);
