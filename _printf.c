@@ -9,7 +9,6 @@
 **/
 int _printf(const char *format, ...)
 {
-format = malloc(sizeof(char) * 1024);
 unsigned int x = 0, a = 0;
 int (*f)(va_list);
 va_list list;
