@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-    _printf("%b\n", 98);
+    _printf("%S\n", "Holberton\nSchool");
     return (0);
 }
