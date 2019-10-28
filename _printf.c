@@ -1,47 +1,58 @@
-#include "holberton.h"
-#include <stddef.h>
-#include <stdlib.h>
-#include <stdio.h>
-/**
-* _printf - Build out the printf function
-* @format: string passed with possible format specifiers
-* Return: number of characters printed
-*/
-int _printf(const char *format, ...)
+#include<stdio.h>
+#include<stdarg.h>
+void Myprintf(char* format,...)
 {
-int i, aladin, hlen;
-double totalBuffer;
-double *total;
-va_list argp;
-char buffer[BUFSIZE], *holder;
-char *(*pointer_get_valid)(va_list);
-for (i = 0; i < BUFSIZE; i++)
+char *traverse;
+unsigned int i;
+char *s;
+va_list arg;
+va_start(arg, format);
+for(traverse = format; *traverse != '\0'; traverse++)
 {
-buffer[i] = 0;
+while( *traverse != '%' )
+{ 
+putchar(*traverse);
+traverse++;
 }
-totalBuffer = 0;
-pointer_get_valid = NULL;
-total = &totalBuffer;
-va_start(argp, format);
-for (i = aladin = hlen = 0; format && format[i]; i++)
+traverse++;
+switch(*traverse) 
 {
-if (format[i] == '%')
-{
-pointer_get_valid = get_valid_type(format[i + 1]);
-holder = (pointer_get_valid == NULL) ?
-found_nothing(format[i + 1]) :
-pointer_get_valid(argp);
-hlen = _strlen(holder);
-aladin = alloc_buffer(holder, hlen, buffer, aladin, total);
-i++;
+case 'c' : i = va_arg(arg,int);     //Fetch char argument
+putchar(i);
+break; 
+case 'd' : i = va_arg(arg,int);         //Fetch Decimal/Integer argument
+if(i<0) 
+{ 
+i = -i;
+putchar('-'); 
+} 
+puts(convert(i,10));
+break; 
+case 'o': i = va_arg(arg,unsigned int); //Fetch Octal representation
+puts(convert(i,8));
+break;
+case 's': s = va_arg(arg,char *);       //Fetch string
+puts(s); 
+break; 
+case 'x': i = va_arg(arg,unsigned int); //Fetch Hexadecimal representation
+puts(convert(i,16));
+break; 
+}   
+} 
+va_end(arg); 
+} 
+char *convert(unsigned int num, int base) 
+{ 
+static char Representation[]= "0123456789ABCDEF";
+static char buffer[50]; 
+char *ptr; 
+ptr = &buffer[49]; 
+*ptr = '\0'; 
+do 
+{ 
+*--ptr = Representation[num%base]; 
+num /= base; 
 }
-else
-{
-holder = ctos(format[i]);
-aladin = alloc_buffer(holder, 1, buffer, aladin, total);
-}
-}
-va_end(argp);
-_puts(buffer, aladin);
-return (totalBuffer + aladin);
+while(num != 0); 
+return(ptr); 
 }
