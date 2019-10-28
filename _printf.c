@@ -1,47 +1,50 @@
-#include "holberton.h"
-#include <unistd.h>
-#include <stdlib.h>
+#include <stdio.h>
 #include <stdarg.h>
+#include "holberton.h"
 /**
-* _printf - custom printf
-* @format: input format
-* Return: total length of string printed
-*/
+* _printf - A print function
+* @format: pointer to a string
+* Return: number of chars
+* Aladin Bensassi / Yassin Bahri
+**/
 int _printf(const char *format, ...)
 {
-int cnt = 0, total = 0, spaces = 0, total1 = 0;
-char z;
+unsigned int x = 0, a = 0;
+int (*f)(va_list);
 va_list list;
-if (format == NULL)
-{
+if (format == '\0')
 return (-1);
-}
 va_start(list, format);
-while (format[cnt] != '\0')
+while (format && format[a])
 {
-if (format[cnt] == '%' && format[cnt + 1] == '\0')
-return (-1);
-else if (format[cnt] == '%' && format[cnt + 1] == '%')
+if (format[a] != '%')
 {
-_putchar(format[cnt + 1]);
-total += 1;
-cnt += 2;
+_putchar(format[a]);
+x++;
 }
-else if (format[cnt] == '%')
+else if (format[a] == '\0')
+return (x);
+else if (format[a] == '%' && format[a + 1] == '\0')
+return (-1);
+else if (format[a] == '%')
 {
-z = spec_get(format, cnt);
-total1 = prog_get(z, list, format, cnt);
-total = total1 + total;
-spaces = count_spaces(format, cnt);
-cnt += (spaces + 2);
+f = getspecifier(format[a + 1]);
+a += 1;
+if (f == '\0')
+{
+if (format[a] != '%')
+{
+_putchar(format[a - 1]);
+x += 1;
+}
+_putchar(format[a]);
+x += 1;
 }
 else
-{
-_putchar(format[cnt]);
-cnt++;
-total++;
+x = x + f(list);
 }
+a++;
 }
 va_end(list);
-return (total);
+return (x);
 }
