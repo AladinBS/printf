@@ -20,3 +20,6 @@ Aladin Ben Sassi and Yassin Bahri
   *  va_end (man 3 va_end)
   *  va_copy (man 3 va_copy)
   *  va_arg (man 3 va_arg)
+
+## Compilation
+``$ gcc -Wall -Werror -Wextra -pedantic *.c``
