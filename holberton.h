@@ -26,4 +26,5 @@ char *convert(unsigned int num, unsigned int size, int base);
 int print_oct(va_list oct);
 int print_u(va_list un);
 int print_usr(va_list arguments, char *buf, unsigned int ibuf);
+char *rot13(char *str);
 #endif
