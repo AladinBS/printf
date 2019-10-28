@@ -155,6 +155,5 @@ do {
 *--ptr = num_sys[num % base];
 num /= base;
 } while (num != 0);
-
 return (ptr);
 }
