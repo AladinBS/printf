@@ -92,3 +92,69 @@ count++;
 }
 return (count);
 }
+/**
+ * print_Xhexa - Converts decimal to uppercase hexadecimal
+ * @args: the list of arguments
+ *
+ * Return: The number of digits printed
+ */
+
+int print_Xhexa(va_list args)
+{
+long int number, temp, x = 0, i;
+char *num;
+unsigned int size = 100;
+number = va_arg(args, int);
+if (number == 0)
+{
+_putchar('0');
+x = 1;
+}
+else if (number < 0)
+{
+_putchar('-');
+number = -number;
+x = 1;
+}
+temp = number;
+while (temp != 0)
+{
+temp /= 16;
+}
+num = convert(number, size, 16);
+while (temp != 0)
+{
+temp /= 16;
+}
+num = convert(number, size, 16);
+for (i = 0; num[i] != '\0'; i++)
+{
+_putchar(num[i]);
+x++;
+}
+return (x);
+}
+
+/**
+ * convert - converts decimal number to hexadecimal number
+ * @num: number to be converted
+ * @size: digits in hexadecimal number
+ * @base: base to convert to
+ * Return: pointer to hexadecimal
+ */
+char *convert(unsigned int num, unsigned int size, int base)
+{
+char num_sys[] = "0123456789ABCDEF";
+char buffer[100];
+char *ptr;
+
+ptr = &buffer[size];
+*ptr = '\0';
+
+do {
+*--ptr = num_sys[num % base];
+num /= base;
+} while (num != 0);
+
+return (ptr);
+}
