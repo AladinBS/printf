@@ -55,4 +55,15 @@ char *fill_oct_array(char *bnr, char *oct);
 char *fill_long_oct_array(char *bnr, char *oct);
 char *fill_short_oct_array(char *bnr, char *oct);
 char *fill_hex_array(char *bnr, char *hex, int isupp, int limit);
+int _printf(const char *format, ...);
+void _putchar(char c);
+int print_int(va_list args);
+int print_char(va_list args);
+int print_str(va_list args);
+int print_per(void);
+int print_bin(va_list bin);
+int print_Xhexa(va_list args);
+char *convert(unsigned int num, unsigned int size, int base);
+int print_oct(va_list oct);
+int print_u(va_list un);
 #endif
