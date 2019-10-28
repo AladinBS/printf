@@ -25,29 +25,33 @@ return (ptr);
 }
 
 /**
-* rot13 - encodes a string with rot13
-* @str: string to be encoded
-* Return: pointer to beginning of string
+*print_rot - prints the rot13'ed string
+*@ro: the arguments list
+*Return: number of printed characters
 */
-char *rot13(char *str)
+int print_rot(va_list ro)
 {
-char encode[] = "azAZbyBYcxCXdwDWevEVfuFUgtGThsHSirIRjqJQkpKPloLOmnMN";
-int i, k = 0;
-int encode_r;
-
-while (*(str + k) != '\0')
+char *s = va_arg(ro, char *);
+int i, j, count = 0;
+char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char rot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+for (i = 0; s[i] != '\0'; i++)
 {
-encode_r = 13;
-for (i = 0; i < 52; i++)
+j = 0;
+while ((alpha[j] != '\0') && (s[i] != alpha[j]))
 {
-if (*(str + k) == encode[i])
-{
-*(str + k) += encode_r;
-break;
+j++;
 }
-encode_r *= -1;
+if (s[i] == alpha[j])
+{
+_putchar(rot[j]);
+count++;
 }
-k++;
+else if (alpha[j] == '\0')
+{
+_putchar(s[i]);
+count++;
 }
-return (str);
+}
+return (count);
 }
