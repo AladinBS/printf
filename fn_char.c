@@ -262,3 +262,31 @@ free(binary);
 free(hexadecimal);
 return (i + sum);
 }
+
+/**
+* rot13 - encodes a string with rot13
+* @str: string to be encoded
+* Return: pointer to beginning of string
+*/
+char *rot13(char *str)
+{
+char encode[] = "azAZbyBYcxCXdwDWevEVfuFUgtGThsHSirIRjqJQkpKPloLOmnMN";
+int i, k = 0;
+int encode_r;
+
+while (*(str + k) != '\0')
+{
+encode_r = 13;
+for (i = 0; i < 52; i++)
+{
+if (*(str + k) == encode[i])
+{
+*(str + k) += encode_r;
+break;
+}
+encode_r *= -1;
+}
+k++;
+}
+return (str);
+}
