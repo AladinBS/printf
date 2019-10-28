@@ -12,11 +12,23 @@
  * printer functions.
  * Aladin Bensassi / Yassin Bahri
  */
+typedef struct mystr
+{
+char letter;
+int (*func)(va_list);
+} mystr;
 typedef struct print
 {
 char *type_arg;
 int (*f)(va_list, char *, unsigned int);
 } print_t;
+int _printf(const char *format, ...);
+int print_c(va_list c);
+int print_s(va_list s);
+int(*getspecifier(char))(va_list);
+int _print_i(va_list vi);
+int print_rs(va_list rs);
+int(*getspecifier(char))(va_list);
 int _printf(const char *format, ...);
 int print_prg(va_list __attribute__((unused)), char *, unsigned int);
 int print_chr(va_list arguments, char *buf, unsigned int ibuf);
