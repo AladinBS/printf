@@ -1,5 +1,7 @@
 #include "holberton.h"
 #include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * print_Xhexa - Converts decimal to uppercase hexadecimal
  * @args: the list of arguments

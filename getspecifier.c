@@ -20,7 +20,7 @@ mystr p[] = {
 {'X', print_Xhexa},
 {'o', print_oct},
 {'u', print_u},
-{'R', *rot13},
+{'R', print_rot},
 {'\0', '\0'}
 };
 for (i = 0; p[i].letter; i++)

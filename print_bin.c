@@ -1,5 +1,7 @@
 #include "holberton.h"
 #include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
 /**
 * print_bin - Converts unsigned int argument to binary
 * @bin: The decimal number to be converted

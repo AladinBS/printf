@@ -1,5 +1,7 @@
 #include "holberton.h"
 #include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
 /**
 * print_rs - prints the reversed string and returns the length of string
 * @rs: the list of arguments
