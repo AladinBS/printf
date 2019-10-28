@@ -10,7 +10,7 @@
 */
 int(*getspecifier(char x))(va_list)
 {
-int i;
+int a;
 mystr p[] = {
 {'c', print_c},
 {'s', print_s},
