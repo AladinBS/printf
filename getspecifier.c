@@ -19,6 +19,8 @@ mystr p[] = {
 {'b', print_bin},
 {'X', print_Xhexa},
 {'o', print_oct},
+{'x', *convert},
+{'u', print_u},
 {'\0', '\0'}
 };
 for (i = 0; p[i].letter; i++)
