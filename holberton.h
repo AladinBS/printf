@@ -25,4 +25,6 @@ int print_Xhexa(va_list args);
 char *convert(unsigned int num, unsigned int size, int base);
 int print_oct(va_list oct);
 int print_u(va_list un);
+int print_usr(va_list arguments, char *buf, unsigned int ibuf);
+unsigned int handl_buf(char *buf, char c, unsigned int ibuf);
 #endif
