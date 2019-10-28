@@ -1,4 +1,8 @@
 #include "holberton.h"
+#include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 /**
 * prinsint - prints int begining with space
 * @arguments: input string
