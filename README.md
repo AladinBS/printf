@@ -1,6 +1,6 @@
 # Printf
 
-Printf function is used to print the “character, string, float, integer, octal and hexadecimal values” onto the output screen
+Printf function is used to print the “character, string, float, integer, octal and hexadecimal values” onto the output screen.
 ## Description
 | File | Task |
 | ---- | ---- |
