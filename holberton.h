@@ -1,29 +1,72 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
+#ifndef PRINT_F
+#define PRINT_F
+
+#include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
+#include <unistd.h>
+
+#define LENGTH(a) (sizeof(a) / sizeof((a)[0]))
+
 /**
-* struct mystr - pointer to function with corresponding letter
-* @letter: specifier
-* @func: print argument
+* struct Options - format specifier options
+* @minus: -, left align
+* @plus: +, display + before non-negative numbers
+* @space:  , display space before non-negatives
+* @hash: o: display 0/0x/0X before nonzero numbers or force decimal point
+* @pad: character to fill empty space with
+* @length: length
+* @precision: precision, or max string length
+* @size: size modifier
 */
-typedef struct mystr
+typedef struct Options
 {
-char letter;
-int (*func)(va_list);
-} mystr;
+int minus;
+int plus;
+int space;
+int hash;
+char pad;
+int length;
+int precision;
+int size;
+} Options;
 
+typedef void (*Printer)(va_list, Options);
 
-int _putchar(char c);
+/**
+* struct Spec - function pointer and specifier.
+* @name: name of specifier.
+* @f: function pointer for get spec.
+*
+* Description: Specifier types.
+*/
+typedef struct Spec
+{
+char name;
+Printer f;
+} Spec;
+
+int out(const char *data, int length);
+void outc(char c);
+void outcr(char c, int count);
+void pad_before(Options options, int length, char *prefix, int prefixlen);
+void pad_after(Options options, int length);
+
 int _printf(const char *format, ...);
-int print_c(va_list c);
-int print_s(va_list s);
-int(*getspecifier(char))(va_list);
-int _print_i(va_list vi);
-int print_bin(va_list bin);
-int print_rs(va_list rs);
-int print_Xhexa(va_list args);
-char *convert(unsigned int num, unsigned int size, int base);
-int print_oct(va_list oct);
-int print_u(va_list un);
-int print_rot(va_list ro);
+
+void process_item(const char **format, va_list args);
+
+void output_invalid(Options options, char spec);
+
+Printer get_spec(char c);
+
+#define GET_SIZED(n, options, args, type) do {			\
+if (options.size == 2)													\
+n = (short type) va_arg(args, type);					\
+else if (options.size == 3)											\
+n = va_arg(args, long type);									\
+else																						\
+n = va_arg(args, type);												\
+} while (0)
+
 #endif
