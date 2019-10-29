@@ -1,0 +1,75 @@
+.TH "_PRINTF" 3 "29/10/2019"
+.SH NAME Aladin Bensassi / Yassin Bahri
+_printf - format and print data
+.SH SYNOPSIS
+.B
+#include "holberton.h"
+.PP
+.B int _printf(const char *format, ...);
+.SH DESCRIPTION
+.PP
+A copy of the standard library function printf.
+_printf() prints a string containing format sequences. Characters other than % are printed directly, and sequences starting with % will print one of the arguments.
+.SS Return value
+.PP
+Returns the number of characters printed, or -1 if an error occurs.
+.SS Format sequences
+.PP
+A format sequence starts with %, and contain flags, a width field, a precision, a size modifier, and ends with a format specifier character.
+.PP
+% [ flags ] [ width ] [ .precision ] [ size ] <specifier>
+.PP
+.SS Flags
+.PP
+# \- If the number to be printed is not 0, output 0 before numbers printed with %o, 0x with %x, and 0X with %X.
+.PP
+0 \- Pad using 0s instead of spaces.
+.PP
+\- \- Insert padding before the printed value rather than after.
+.PP
+space \- Print a space before non-negative numbers printed with %d or %i.
+.PP
++ \- Print a + before non-negative numbers with %d or %i. Takes priority over space.
+.SS Width
+.PP
+If the text to be printed is less than the width value, spaces (or 0s if the 0 flag is used) are printed before (or after, with the - flag) the text so it is the correct width.
+.SS Precision
+.PP
+In %d, %i, %u, %o, %x, and %X, specifies the minimum number of digits to print. In %s, specifies the maximum number of characters from the string to print.
+.SS Size
+Controls the size of the argument to read. Default is int, only affects %i, %d, %u, %o, %x, and %X.
+.PP
+h             short int
+.PP
+l             long int
+.SS Specifier
+.PP
+This character controls what type is read from the argument list, and what format is is printed in.
+.PP
+d, i          Print a signed integer in decimal
+.PP
+o, u, x, X    Print an unsigned integer in octal (o), decimal (u), lowercase
+              hexadecimal (x) or uppercase hexadecimal (X).
+.PP
+c             A character is printed.
+.PP
+s             Print a nul-terminated string (not including the nul). If a null
+              pointer is passed, print (null).
+.PP
+p             Print a pointer in hexadecimal, starting with 0x.
+.PP
+S	         Non printable characters (0 < ASCII value < 32 or >= 127)
+              are printed this way: \\x, followed by the ASCII code value in
+              hexadecimal (upper case - always 2 characters)
+.PP
+b	         The unsigned int argument is converted to binary.
+.PP
+r	         Prints the reversed version of a string.
+.PP
+R	         Prints the rot13 version of characters. Every character is moved
+              13 places in the alphabet. ex. (a = n)
+.PP
+%             Print a %.
+.SH SEE ALSO
+.PP
+printf(3)
