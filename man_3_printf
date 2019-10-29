@@ -14,6 +14,6 @@ others
 .SH SEE ALSO
 printf(3)
 .SH BUGS
-No known bugs.
+No known bugs for now :)
 .SH AUTHOR
 Aladin Ben Sassi (https://github.com/AladinBS) and Yassin Bahri (https://github.com/student1043)
