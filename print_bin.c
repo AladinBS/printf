@@ -6,7 +6,7 @@
 * print_bin - Converts unsigned int argument to binary
 * @bin: The decimal number to be converted
 * Return: The number of digits printed
-* Aladin Bensassi
+* Aladin Bensassi / Yassin Bahri :)
 */
 int print_bin(va_list bin)
 {
