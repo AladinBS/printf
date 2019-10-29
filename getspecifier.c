@@ -6,6 +6,7 @@
 * getspecifier - finds the function for the specifier
 * @x: the specifier in the string
 * Return: pointer to function
+* Aladin Ben Sassi / Yassin Bahri
 */
 int(*getspecifier(char x))(va_list)
 {
