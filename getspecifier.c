@@ -6,7 +6,6 @@
 * getspecifier - finds the function for the specifier
 * @x: the specifier in the string
 * Return: pointer to function
-* Aladin Ben Sassi / Yassin Bahri
 */
 int(*getspecifier(char x))(va_list)
 {
@@ -18,11 +17,12 @@ mystr p[] = {
 {'d', _print_i},
 {'r', print_rs},
 {'b', print_bin},
-{'X', print_Xhexa},
 {'p', _print_p},
-{'o', print_oct},
 {'S', print_S},
 {'u', print_u},
+{'o', print_o},
+{'x', print_x},
+{'X', print_X},
 {'R', print_rot},
 {'\0', '\0'}
 };

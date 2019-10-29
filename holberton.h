@@ -26,11 +26,12 @@ int _print_p(va_list p);
 int _print_i(va_list vi);
 int print_bin(va_list bin);
 int print_rs(va_list rs);
-int print_Xhexa(va_list args);
 char *convert(unsigned int num, unsigned int size, int base);
-int print_oct(va_list oct);
-int print_u(va_list un);
 int print_rot(va_list ro);
 int print_S(va_list S);
+int print_u(va_list u);
+int print_o(va_list o);
+int print_x(va_list x);
+int print_X(va_list X);
 
 #endif
