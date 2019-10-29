@@ -1,4 +1,7 @@
 #include "holberton.h"
+#include <stdarg.h>
+#include <stdio.h>
+#include "functions.h"
 /**
 * print_u - Print unsigned integer
 * @args: arg list

@@ -69,4 +69,6 @@ else																						\
 n = va_arg(args, type);												\
 } while (0)
 
+void print_r(va_list args, Options options)
+
 #endif

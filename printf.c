@@ -1,5 +1,7 @@
 #include "holberton.h"
-
+#include <stdarg.h>
+#include <stdio.h>
+#include "functions.h"
 /**
 * _printf - printf
 *
