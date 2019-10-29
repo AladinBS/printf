@@ -51,27 +51,31 @@ return (count);
 */
 int print_u(va_list un)
 {
-unsigned int number, count = 0, divisor;
+unsigned int i, num, div, o, n, count = 0;
 
-number = va_arg(un, int);
-
-if (number == 0)
+n = va_arg(u, unsigned int);
+o = n % 10;
+n = n / 10;
+num = n;
+div = 1;
+if (num > 0)
 {
-_putchar('0');
-count = 1;
+while ((num / 10) != 0)
+{
+num = num / 10;
+div = div * 10;
 }
-if (number > 0)
+while (div >= 1)
 {
-for (divisor = 1; (number / divisor) > 9; divisor *= 10)
-;
-while (divisor != 0)
-{
-_putchar((number / divisor) + '0');
-number %= divisor;
-divisor /= 10;
+i = n / div;
+_putchar(i + '0');
 count++;
+n = n % div;
+div = div / 10;
 }
 }
+_putchar(o + '0');
+count++;
 return (count);
 }
 
@@ -83,27 +87,25 @@ return (count);
  */
 int print_oct(va_list oct)
 {
-unsigned int number, count = 0, index = 0;
-int arr[100];
+unsigned int octal[10];
+unsigned int count = 0, n = 0;
+int i = 0;
 
-number = va_arg(oct, int);
-if (number < 9)
+n = va_arg(o, unsigned int);
+if (n == 0)
 {
-_putchar(number + '0');
-count = 1;
+_putchar(0 + '0');
+count++;
 }
-else if (number >= 9)
+while (n > 0)
 {
-while (number > 0)
-{
-arr[index] = number % 8;
-number /= 8;
-index++;
+octal[i] = n % 8;
+n = n / 8;
+i++;
 }
-}
-while (index--)
+for (--i; i >= 0; i--)
 {
-_putchar(arr[index] + '0');
+_putchar(octal[i] + '0');
 count++;
 }
 return (count);

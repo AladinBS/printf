@@ -11,36 +11,64 @@
 
 int print_Xhexa(va_list args)
 {
-long int number, temp, x = 0, i;
-char *num;
-unsigned int size = 100;
-number = va_arg(args, int);
-if (number == 0)
+char hex[20];
+unsigned int count = 0, n = 0;
+int i = 0;
+
+n = va_arg(X, unsigned int);
+if (n == 0)
 {
-_putchar('0');
-x = 1;
+_putchar(0 + '0');
+count++;
 }
-else if (number < 0)
+while (n > 0)
 {
-_putchar('-');
-number = -number;
-x = 1;
+if (n % 16 >= 10 && n % 16 <= 15)
+hex[i] = 55 + (n % 16);
+else
+hex[i] = 48 + (n % 16);
+n = n / 16;
+i++;
 }
-temp = number;
-while (temp != 0)
+for (--i; i >= 0; i--)
 {
-temp /= 16;
+_putchar(hex[i]);
+count++;
 }
-num = convert(number, size, 16);
-while (temp != 0)
+return (count);
+}
+
+
+/**
+* _print_x - prints input integer to an hexadecimal in lowercase
+* @x: the list of arguments
+* Return: number of printed characters
+*/
+int _print_x(va_list x)
 {
-temp /= 16;
-}
-num = convert(number, size, 16);
-for (i = 0; num[i] != '\0'; i++)
+char hex[20];
+unsigned int count = 0, n = 0;
+int i = 0;
+
+n = va_arg(x, unsigned int);
+if (n == 0)
 {
-_putchar(num[i]);
-x++;
+_putchar(0 + '0');
+count++;
 }
-return (x);
+while (n > 0)
+{
+if (n % 16 >= 10 && n % 16 <= 15)
+hex[i] = 87 + (n % 16);
+else
+hex[i] = 48 + (n % 16);
+n = n / 16;
+i++;
+}
+for (--i; i >= 0; i--)
+{
+_putchar(hex[i]);
+count++;
+}
+return (count);
 }
