@@ -37,4 +37,4 @@ printf ("string", variable);
 ``$ gcc -Wall -Werror -Wextra -pedantic *.c``
 
 # Project By
-Aladin Ben Sassi and Yassin Bahri
+Aladin Ben Sassi and Yassin Bahri :)
