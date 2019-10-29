@@ -19,6 +19,7 @@ mystr p[] = {
 {'b', print_bin},
 {'X', print_Xhexa},
 {'o', print_oct},
+{'S', print_S},
 {'u', print_u},
 {'R', print_rot},
 {'\0', '\0'}
