@@ -24,7 +24,7 @@ Printf function is used to print the “character, string, float, integer, octal
 ## Usage
 
 ```c
-printf ("string", variable)
+printf ("string", variable);
 ```
 
 
@@ -42,4 +42,4 @@ printf ("string", variable)
 ``$ gcc -Wall -Werror -Wextra -pedantic *.c``
 
 # Project By
-Aladin Ben Sassi and Yassin Bahri
+Aladin Ben Sassi and Yassin Bahri :)
