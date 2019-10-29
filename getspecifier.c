@@ -18,6 +18,7 @@ mystr p[] = {
 {'r', print_rs},
 {'b', print_bin},
 {'X', print_Xhexa},
+{'p', _print_p},
 {'o', print_oct},
 {'S', print_S},
 {'u', print_u},
