@@ -1,7 +1,14 @@
 # Printf
 
 Printf function is used to print the “character, string, float, integer, octal and hexadecimal values” onto the output screen.
-
+## Description
+| File | Task |
+| ---- | ---- |
+| holberton.h | Header file containing all prototype functions and structs used in this project |
+| _printf.c | The actual _printf function to print the string as well as whatever argument corresponds with each format specifier |
+| getspecifier.c | Contains all the format specifier for the printf function |
+| fn_char.c | Contains the printing functions for printf |
+| fn_numbers.c | Contains the printing functions for printf |
 ## Usage
 
 ```c
