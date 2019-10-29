@@ -1,10 +1,19 @@
-PRINTF(3)                 Printf User Manual                PRINTF(3)
-NAME
-     printf - prints entered string
-SYNOPSIS
-     printf [string]
-DESCRIPTION
-     printf prints entered string to stdout
-OPTIONS
-     None.
-PRINTF(3)
+.\" Manpage for AladinandYassin
+.TH man 3 "29 Oct 2019" "1.0" "_printf man page"
+.SH NAME
+.B _printf
+- Formatted output conversion
+.SH SYNOPSIS
+.B #include "holberton.h"
+
+.B int _printf(const char *format, ...)
+.SH DESCRIPTION
+conversion specifiers: c , s , %, d, i
+.SH OPTIONS
+others
+.SH SEE ALSO
+printf(3)
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Aladin Ben Sassi (https://github.com/AladinBS) and Yassin Bahri (https://github.com/student1043)
