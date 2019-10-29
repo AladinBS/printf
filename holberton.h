@@ -35,5 +35,16 @@ int print_S(va_list S);
 void output_invalid(Options options, char spec);
 void print_number(int n);
 void print_number_sub(int n);
+typedef struct Options
+{
+	int minus;
+	int plus;
+	int space;
+	int hash;
+	char pad;
+	int length;
+	int precision;
+	int size;
+} Options;
 
 #endif
