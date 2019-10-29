@@ -2,6 +2,7 @@
 
 Printf function is used to print the “character, string, float, integer, octal and hexadecimal values” onto the output screen.
 ## Description
+
 | File | Task |
 | ---- | ---- |
 | holberton.h | Header file containing all prototype functions and structs used in this project |
