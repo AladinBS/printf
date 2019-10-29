@@ -1,6 +1,7 @@
 #include "holberton.h"
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdlib.h>
 /**
 *_print_i - prints an integer
 *@vi: the list of arguments
