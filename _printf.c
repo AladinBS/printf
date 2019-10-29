@@ -5,7 +5,7 @@
 * _printf - A print function
 * @format: pointer to a string
 * Return: number of chars
-* Aladin Bensassi / Yassin Bahri
+* Aladin Bensassi / Yassin Bahri :)
 **/
 int _printf(const char *format, ...)
 {
