@@ -1,0 +1,10 @@
+PRINTF(3)                 Printf User Manual                PRINTF(3)
+NAME
+     printf - prints entered string
+SYNOPSIS
+     printf [string]
+DESCRIPTION
+     printf prints entered string to stdout
+OPTIONS
+     None.
+PRINTF(3)
