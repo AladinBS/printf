@@ -13,13 +13,14 @@ Printf function is used to print the “character, string, float, integer, octal
 | Format Specifier | Data Type |
 | ---------------- | --------- |
 | %c | char |
-| %s | char |
-| %d | char |
-| %i | char |
-| %% | char |
-| %% | char |
-| %% | char |
-| %% | char |
+| %s | string |
+| %d | base 10 decimal number |
+| %i | base 10 integer |
+| %% | percent sign |
+| %b | binary number |
+| %o | octal number |
+| %u | unsigned integer |
+| %X | hexadecimal number (uppercase) |
 ## Usage
 
 ```c
