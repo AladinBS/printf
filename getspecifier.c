@@ -21,7 +21,6 @@ mystr p[] = {
 {'o', print_oct},
 {'u', print_u},
 {'R', print_rot},
-{'S', print_S},
 {'\0', '\0'}
 };
 for (i = 0; p[i].letter; i++)
