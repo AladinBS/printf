@@ -8,8 +8,6 @@ Printf function is used to print the “character, string, float, integer, octal
 printf ("string", variable);
 ```
 
-## Project By
-Aladin Ben Sassi and Yassin Bahri
 
 ## Authorized functions and macros
 
@@ -23,3 +21,6 @@ Aladin Ben Sassi and Yassin Bahri
 
 ## Compilation
 ``$ gcc -Wall -Werror -Wextra -pedantic *.c``
+
+# Project By
+Aladin Ben Sassi and Yassin Bahri
