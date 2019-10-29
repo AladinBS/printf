@@ -13,10 +13,13 @@ Printf function is used to print the “character, string, float, integer, octal
 | Format Specifier | Data Type |
 | ---------------- | --------- |
 | %c | char |
-| %c | char |
-| %c | char |
-| %c | char |
-| %c | char |
+| %s | char |
+| %d | char |
+| %i | char |
+| %% | char |
+| %% | char |
+| %% | char |
+| %% | char |
 ## Usage
 
 ```c
