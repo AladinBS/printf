@@ -21,10 +21,9 @@ int(*getspecifier(char))(va_list);
 int _print_i(va_list vi);
 int print_bin(va_list bin);
 int print_rs(va_list rs);
-int _print_X(va_list args);
+int print_Xhexa(va_list args);
 char *convert(unsigned int num, unsigned int size, int base);
-int _print_o(va_list oct);
-int _print_u(va_list un);
-int _print_x(va_list o);
+int print_oct(va_list oct);
+int print_u(va_list un);
 int print_rot(va_list ro);
 #endif
