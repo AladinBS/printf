@@ -26,4 +26,6 @@ char *convert(unsigned int num, unsigned int size, int base);
 int print_oct(va_list oct);
 int print_u(va_list un);
 int print_rot(va_list ro);
+void print_S(va_list args, Options options);
+
 #endif
