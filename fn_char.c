@@ -103,3 +103,56 @@ count++;
 }
 return (count);
 }
+
+/**
+* long_hex_helper - converts and prints base 10 in lowercase base 16
+* @n: argument of type long
+*
+* Return: number of characters printed
+*/
+
+int long_hex_helper(long n)
+{
+if (n < 16)
+{
+if (n < 9)
+_putchar(n + '0');
+
+else
+_putchar((n % 10) + 97);
+
+return (1);
+}
+return(1 + long_hex_helper(n / 16) +
+!_putchar(n % 16 < 9 ? n % 16 + '0' : ((n % 16) % 10) + 97));
+}
+
+/**
+* print_pointer - prints pointer address
+* @args: address to print
+*
+* Return: number of characters printed
+*/
+
+int print_pointer(va_list args)
+{
+long address = va_arg(args, long);
+
+if (address == 0)
+{
+write(1, "(nil)", 5);
+return (5);
+}
+
+if (address < 0)
+{
+write(1, "0xffffffffffffffff", 18);
+return (18);
+}
+
+_putchar('0');
+_putchar('x');
+
+return (long_hex_helper(address) + 2);
+}
+

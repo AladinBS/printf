@@ -27,5 +27,7 @@ int print_oct(va_list oct);
 int print_u(va_list un);
 int print_rot(va_list ro);
 int print_S(va_list S);
+int long_hex_helper(long n);
+int print_pointer(va_list args);
 
 #endif

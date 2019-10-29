@@ -20,6 +20,7 @@ mystr p[] = {
 {'X', print_Xhexa},
 {'o', print_oct},
 {'S', print_S},
+{'p', print_pointer},
 {'u', print_u},
 {'R', print_rot},
 {'\0', '\0'}
