@@ -1,6 +1,10 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
+
+#include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
+#include <unistd.h>
 /**
 * struct mystr - pointer to function with corresponding letter
 * @letter: specifier
@@ -28,5 +32,8 @@ int print_oct(va_list oct);
 int print_u(va_list un);
 int print_rot(va_list ro);
 int print_S(va_list S);
+void output_invalid(Options options, char spec);
+void print_number(int n);
+void print_number_sub(int n);
 
 #endif
