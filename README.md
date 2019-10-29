@@ -21,7 +21,6 @@ Printf function is used to print the “character, string, float, integer, octal
 | %u | unsigned integer |
 | %X | hexadecimal number (uppercase) |
 ## Usage
-
 ```c
 printf ("string", variable);
 ```
