@@ -9,6 +9,14 @@ Printf function is used to print the “character, string, float, integer, octal
 | getspecifier.c | Contains all the format specifier for the printf function |
 | fn_char.c | Contains the printing functions for printf |
 | fn_numbers.c | Contains the printing functions for printf |
+
+| Format Specifier | Data Type |
+| ---------------- | --------- |
+| %c | char |
+| %c | char |
+| %c | char |
+| %c | char |
+| %c | char |
 ## Usage
 
 ```c
